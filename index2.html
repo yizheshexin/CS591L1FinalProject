@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CS591 final project</title>
+    </head>
+<body>
+	<h1>BU course open seat remind system</h1>
+	<h3>In our system, you can set up a tracking mission for a course which doesn't have a open seat right now. Once there is an open seat, we will send you a message to remind you; You can also check the mission by using email; Finally, we also offer to visualize the open seat trend for a specific course. Let's have a try!:</h3>
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+<h2>Set up mission:<br></h2>
+<form action="/CGI-Executables/create.py" method="POST">
+Choose semester:
+<select name="SemList">
+<option selected="">select...</option>
+<option value="20203">FALL 19</option>
+<option value="20204">SPRG 20</option>
+</select>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+Choose college:
+<select name="College" onchange="ClearCollege();">
+                            <option selected="">select...
+                            </option><option>BUA</option><option>CAS</option><option>CFA</option><option>CGS</option><option>COM</option><option>ENG</option><option>EOP</option><option>FRA</option><option>GMS</option><option>GRS</option><option>HUB</option><option>KHC</option><option>LAW</option><option>MED</option><option>MET</option><option>OTP</option><option>PDP</option><option>QST</option><option>SAR</option><option>SDM</option><option>SED</option><option>SHA</option><option>SPH</option><option>SSW</option><option>STH</option><option>XAS</option><option>XRG
+                            </option></select>
+<br>
+Department:
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+Course:
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+You don't need to set section, right now we only support a1.
+<br>
+<input type="text" name="Department">
+<input type="text" name="Course">
+<input type="text" name="Email">
+<br>
+<input type="submit" value="Submit">
+</form>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<h2>Check exsited mission by email:<br></h2>
+<form action="/CGI-Executables/query.py" method="POST">
+Email:
+<input type="text" name="Email">
+<br>
+<input type="submit" value="Submit">
+</form>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<h2>Visualization:<br></h2>
+<form action="/CGI-Executables/get_graph.py" method="POST">
+Choose semester:
+<select name="SemList">
+<option selected="">select...</option>
+<option value="20203">FALL 19</option>
+<option value="20204">SPRG 20</option>
+</select>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+Choose college:
+<select name="College" onchange="ClearCollege();">
+                            <option selected="">select...
+                            </option><option>BUA</option><option>CAS</option><option>CFA</option><option>CGS</option><option>COM</option><option>ENG</option><option>EOP</option><option>FRA</option><option>GMS</option><option>GRS</option><option>HUB</option><option>KHC</option><option>LAW</option><option>MED</option><option>MET</option><option>OTP</option><option>PDP</option><option>QST</option><option>SAR</option><option>SDM</option><option>SED</option><option>SHA</option><option>SPH</option><option>SSW</option><option>STH</option><option>XAS</option><option>XRG
+                            </option></select>
+<br>
+Department:
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+Course:
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+You don't need to set section, right now we only support a1.
+<br>
+<input type="text" name="Department">
+<input type="text" name="Course">
+<br>
+<input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
+
